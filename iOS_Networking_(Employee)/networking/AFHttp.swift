@@ -70,13 +70,11 @@ class AFHttp {
         
         class func paramsPostCreate(employee: Employee) -> Parameters {
             let parameters: Parameters = [
-                "employee_name": employee.employee_name!,
-                "employee_salary": employee.employee_salary!,
-                "employee_age": employee.employee_age!,
-                "profile_image": employee.profile_image!,
-//                "title": post.title!,
-//                "body": post.body!,
-//                "userId": post.userId!,
+                "name": employee.name!,
+                "salary": employee.salary!,
+                "age": employee.age!,
+                "profile_image": employee.data(image!),
+
             ]
             return parameters
         }
@@ -84,14 +82,11 @@ class AFHttp {
         class func paramsPostUpdate(employee: Employee) -> Parameters {
             let parameters: Parameters = [
                 "id": employee.id!,
-                "employee_name": employee.employee_name!,
-                "employee_salary": employee.employee_salary!,
-                "employee_age": employee.employee_age!,
+                "name": employee.name!,
+                "salary": employee.salary!,
+                "age": employee.age!,
                 "profile_image": employee.profile_image!,
-//                "id": post.id!,
-//                "title": post.title!,
-//                "body": post.body!,
-//                "userId": post.userId!,
+
             ]
             return parameters
         }

@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     @ObservedObject var viewModel = PostViewModel()
+    
     var body: some View {
         
         NavigationView {
             Text("Hello, world!")
                 .padding()
         }.onAppear{
-            viewModel.apiEmployeeList()
+            //viewModel.apiEmployeeList()
+            //viewModel.apiEmployeeSingle(id: 719)
+            let employee = Employee(name: "test", salary: "123", age: "23")
+            viewModel.apiEmployeeCreate(employee: employee)
         }
     }
 }
