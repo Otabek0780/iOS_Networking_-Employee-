@@ -11,6 +11,7 @@ class PostViewModel: ObservableObject {
     @Published var employees = [Data]()
     @Published var isLoading = false
     
+    
     func apiEmployeeList() {
         isLoading = true
         AFHttp.get(url: AFHttp.API_POST_LIST, params: AFHttp.paramsEmpty(), handler: { response in
