@@ -9,24 +9,24 @@ import Foundation
 
 struct Employee: Decodable{
     
-    var status: String?
-    var data: [Data]
+    //var status: String?
+    var data: [Data]?
     
 }
 struct Data: Decodable {
-    
+
     var employee_name: String?
     var employee_salary: String?
     var employee_age: String?
     var id: String?
     var profile_image: String?
-    
+
     init() {
-        
+
     }
-    
+
     init(name: String, salary: String, age: String, id: String, image: String) {
-        
+
         self.id = id
         self.employee_name = name
         self.employee_salary = salary

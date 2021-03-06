@@ -14,13 +14,32 @@ struct ContentView: View {
     var body: some View {
         
         NavigationView {
-            Text("Hello, world!")
-                .padding()
+            ZStack{
+                List(self.viewModel.employees, id: \.id){ employee in
+                    VStack(alignment: .leading){
+                        Text(employee.employee_name!).bold()
+                        HStack{
+                            Text("Age: ").font(.subheadline)
+                            Text(employee.employee_age!).font(.subheadline)
+                            Text("| Salary: ").font(.subheadline)
+                            Text(employee.employee_salary!).font(.subheadline)
+                            
+                        }
+                }
+                if self.viewModel.isLoading {
+                    ProgressView()
+                }
+            }
+            .listStyle(PlainListStyle())
+            .navigationBarTitle("Post")
+            
         }.onAppear{
-            //viewModel.apiEmployeeList()
+            self.viewModel.apiEmployeeList()
             //viewModel.apiEmployeeSingle(id: 719)
-            let employee = Employee(name: "test", salary: "123", age: "23")
-            viewModel.apiEmployeeCreate(employee: employee)
+            //let employee = Employee(name: "test", salary: "123", age: "23", id: "", image: "")
+            //viewModel.apiEmployeeCreate(employee: employee)
+            //viewModel.apiEmployeeUpdate(employee: employee)
+            //viewModel.apiEmployeeDelete(employee: employee)
         }
     }
 }
@@ -29,4 +48,5 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
+}
 }

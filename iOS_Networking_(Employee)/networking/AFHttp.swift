@@ -49,11 +49,6 @@ class AFHttp {
             return URL(string: DEP_SER + url)!
         }
     // MARK : - AFHttp Apis
-//        static let API_POST_LIST = "api/v1/employees"
-//        static let API_POST_SINGLE = "api/v1/employee/" //id
-//        static let API_POST_CREATE = "api/v1/create"
-//        static let API_POST_UPDATE = "api/v1/update/" //id
-//        static let API_POST_DELETE = "api/v1/delete/" //id
         
         static let API_POST_LIST = "api/v1/employees"
         static let API_POST_SINGLE = "api/v1/employee/" //id..1
@@ -68,27 +63,27 @@ class AFHttp {
             return parameters
         }
         
-        class func paramsPostCreate(employee: Employee) -> Parameters {
-            let parameters: Parameters = [
-                "name": employee.name!,
-                "salary": employee.salary!,
-                "age": employee.age!,
-                "profile_image": employee.data(image!),
-
-            ]
-            return parameters
-        }
-    
-        class func paramsPostUpdate(employee: Employee) -> Parameters {
-            let parameters: Parameters = [
-                "id": employee.id!,
-                "name": employee.name!,
-                "salary": employee.salary!,
-                "age": employee.age!,
-                "profile_image": employee.profile_image!,
-
-            ]
-            return parameters
-        }
+//        class func paramsPostCreate(employee: Employee) -> Parameters {
+//            let parameters: Parameters = [
+//                "name": employee.employee_name!,
+//                "salary": employee.employee_salary!,
+//                "age": employee.employee_age!,
+//                "profile_image": employee.profile_image!,
+//
+//            ]
+//            return parameters
+//        }
+//
+//        class func paramsPostUpdate(employee: Employee) -> Parameters {
+//            let parameters: Parameters = [
+//                "id": employee.id!,
+//                "name": employee.employee_name!,
+//                "salary": employee.employee_salary!,
+//                "age": employee.employee_age!,
+//                "profile_image": employee.profile_image!,
+//
+//            ]
+//            return parameters
+//        }
     
 }
