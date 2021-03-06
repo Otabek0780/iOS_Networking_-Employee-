@@ -18,13 +18,7 @@ struct ContentView: View {
                 List(self.viewModel.employees, id: \.id){ employee in
                     VStack(alignment: .leading){
                         Text(employee.employee_name!).bold()
-                        HStack{
-                            Text("Age: ").font(.subheadline)
-                            Text(employee.employee_age!).font(.subheadline)
-                            Text("| Salary: ").font(.subheadline)
-                            Text(employee.employee_salary!).font(.subheadline)
-                            
-                        }
+                        
                 }
                 if self.viewModel.isLoading {
                     ProgressView()
