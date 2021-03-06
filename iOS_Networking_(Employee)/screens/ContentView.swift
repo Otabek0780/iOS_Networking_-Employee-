@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var viewModel = PostViewModel()
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+        NavigationView {
+            Text("Hello, world!")
+                .padding()
+        }.onAppear{
+            viewModel.apiEmployeeList()
+        }
     }
 }
 
